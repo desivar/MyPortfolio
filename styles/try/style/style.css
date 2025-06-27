@@ -1,0 +1,122 @@
+:root {
+    --color-mint: #caf7e3;
+    --color-light-pink: #f8eded;
+    --color-lavender: #f6dfed;
+    --color-mauve: #e4bad4;
+    --text-dark: #333;
+    --text-light: #f8f8f8;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: var(--color-light-pink);
+    --accent-color: var(--color-mauve);
+    --card-bg: #333;
+}
+
+.light-mode {
+    --bg-primary: var(--color-light-pink);
+    --bg-secondary: var(--color-mint);
+    --text-primary: var(--text-dark);
+    --accent-color: var(--color-lavender);
+    --card-bg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+header {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #B2F7EF;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        padding: 10px;
+        width: 100%;
+    }
+  
+    nav ul.show {
+        display: flex;
+    }
+  
+    .menu-toggle {
+        display: block;
+    }
+  }
+  
