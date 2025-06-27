@@ -1,0 +1,478 @@
+:root {
+    --color-mint: #caf7e3;
+    --color-light-pink: #f8eded;
+    --color-lavender: #f6dfed;
+    --color-mauve: #e4bad4;
+    --text-dark: #333;
+    --text-light: #f8f8f8;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: var(--color-light-pink);
+    --accent-color: var(--color-mauve);
+    --card-bg: #333;
+}
+
+.light-mode {
+    --bg-primary: var(--color-light-pink);
+    --bg-secondary: var(--color-mint);
+    --text-primary: var(--text-dark);
+    --accent-color: var(--color-lavender);
+    --card-bg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+header {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #B2F7EF;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        padding: 10px;
+        width: 100%;
+    }
+  
+    nav ul.show {
+        display: flex;
+    }
+  
+    .menu-toggle {
+        display: block;
+    }
+  }
+  
+  /* Hero Section (Unchanged) */
+  .hero {
+    background-image: url('../images/heroimgcute.webp'); /* Path to your hero image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: black; /* Text color */
+    text-align: center;
+    padding: 100px 20px;
+    position: relative; /* For positioning the overlay */
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  /* Glassmorphism effect  */
+  .glass-text {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Light border */
+    border-radius: 15px;
+    padding: 20px 40px;
+    text-align: center;
+    color: black; /* White text for contrast */
+    max-width: 80%;
+  }
+  
+  .glass-text h1, .glass-text p {
+    margin: 0;
+    padding: 0;
+  }
+  
+ .glass-button {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Light border */
+    border-radius: 15px;
+    padding: 20px 40px;
+    text-align: center;
+    color: black; 
+    max-width: 80%;
+    text-decoration: none; /* Add this line to remove underline in normal state */
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-decoration: none; /* Ensure no underline on hover */
+}
+  /* About Me Section (Unchanged) */
+  .about-me {
+    padding: 50px 20px;
+    background-color:#b2f7ef;
+    color: black;
+  }
+  
+  .about-me-title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .about-me-text {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items:center;
+    gap: 20px; /* Space between image and text */
+  }
+  
+  .about-img {
+    max-width: 250px; /* Adjust as needed */
+    border-radius: 25%; 
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Light border */
+  }
+  
+  .about-text {
+    flex: 1;
+    text-align: left; /* Ensure text is aligned to the left */
+  }
+  
+  .about-text h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  
+  .button-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .glass-button {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Light border */
+    border-radius: 15px;
+    padding: 20px 40px;
+    text-align: center;
+    color: black; 
+    max-width: 80%;
+    text-decoration: none; /* Add this line to remove underline in normal state */
+  
+  }
+  
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-decoration: none; /* Ensure no underline on hover */
+    
+  }
+
+  /* Skills Marquee Section */
+.skills {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #B2F7EF;
+    color: black;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 15px;
+}
+
+.skills h2 {
+    margin-bottom: 2rem;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+.skills-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.skills-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Light border */
+    padding: 20px 0;
+}
+
+.skills-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: fit-content;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+    transition: transform 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* To duplicate skills for continuous scrolling */
+.skills-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: fit-content;
+}
+
+.skills-track:hover {
+    animation-play-state: paused;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #EFF7F6;
+    color: black;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.projects h2 {
+    margin-bottom: 3rem;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #B2F7EF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5rem;
+    padding: 0 15px;
+}
+
+.project-card p {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 15px 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    color: #f2b5d4;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+.github-btn {
+    background-color: #333;
+    color: white;
+}
+
+.demo-btn {
+    background-color: black;
+    color: pink;
+}
+
+/* Responsive Projects */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-item {
+        margin: 0 1rem;
+    }
+    
+    .skill-item img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #B2F7EF;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        padding: 10px;
+        width: 100%;
+        z-index: 100;
+    }
+}
+  
+ 
+
+  
+  /* Footer (Unchanged) */
+  footer {
+    background-color: #b2f7ef;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
